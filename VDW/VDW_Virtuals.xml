@@ -1,0 +1,438 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_SharedXML/UI.xsd">
+	<Frame name="vdwZlave" parent="UIParent" frameStrata="BACKGROUND" frameLevel="0" hidden="true">
+		<Scripts>
+			<OnLoad>
+				self:RegisterEvent("PLAYER_LOGIN")
+			</OnLoad>
+		</Scripts>
+	</Frame>
+	<Script file="VDW_Zlave.lua"/>
+<!-- Normal Fonts 13 shadow -->
+	<FontFamily name="vdw_NFshadow_13" virtual="true">
+		<Member alphabet="roman">
+			<Font font="Fonts\FRIZQT__.TTF" height="13">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="korean">
+			<Font font="Fonts\2002.ttf" height="14">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="simplifiedchinese">
+			<Font font="Fonts\ARKai_T.ttf" height="13">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="traditionalchinese">
+			<Font font="Fonts\blei00d.TTF" height="13">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="russian">
+			<Font font="Fonts\FRIZQT___CYR.TTF" height="13">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+	</FontFamily>
+<!-- Normal Fonts 15 shadow -->
+	<FontFamily name="vdw_NFshadow_15" virtual="true">
+		<Member alphabet="roman">
+			<Font font="Fonts\FRIZQT__.TTF" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="korean">
+			<Font font="Fonts\2002.ttf" height="16">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="simplifiedchinese">
+			<Font font="Fonts\ARKai_T.ttf" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="traditionalchinese">
+			<Font font="Fonts\blei00d.TTF" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="russian">
+			<Font font="Fonts\FRIZQT___CYR.TTF" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+	</FontFamily>
+<!-- Funky Fonts 15 shadow -->
+	<FontFamily name="vdw_FFshadow_15" virtual="true">
+		<Member alphabet="roman">
+			<Font font="Fonts\skurri.ttf" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="korean">
+			<Font font="Fonts\K_Damage.ttf" height="9">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="simplifiedchinese">
+			<Font font="Fonts\ARKai_C.ttf" height="5">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="traditionalchinese">
+			<Font font="Fonts\bKAI00M.ttf" height="5">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="russian">
+			<Font font="Fonts\SKURRI_CYR.TTF" height="15">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+	</FontFamily>
+<!-- Funky Fonts 18 shadow -->
+	<FontFamily name="vdw_FFshadow_18" virtual="true">
+		<Member alphabet="roman">
+			<Font font="Fonts\skurri.ttf" height="18">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="korean">
+			<Font font="Fonts\K_Damage.ttf" height="12">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="simplifiedchinese">
+			<Font font="Fonts\ARKai_C.ttf" height="8">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="traditionalchinese">
+			<Font font="Fonts\bKAI00M.ttf" height="8">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="russian">
+			<Font font="Fonts\SKURRI_CYR.TTF" height="18">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+	</FontFamily>
+<!-- Funky Fonts 22 shadow -->
+	<FontFamily name="vdw_FFshadow_22" virtual="true">
+		<Member alphabet="roman">
+			<Font font="Fonts\skurri.ttf" height="22">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="korean">
+			<Font font="Fonts\K_Damage.ttf" height="16">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="simplifiedchinese">
+			<Font font="Fonts\ARKai_C.ttf" height="12">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="traditionalchinese">
+			<Font font="Fonts\bKAI00M.ttf" height="12">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+		<Member alphabet="russian">
+			<Font font="Fonts\SKURRI_CYR.TTF" height="22">
+				<Shadow x="1" y="-1">
+					<Color r="0" g="0" b="0" a="1"/>
+				</Shadow>
+			</Font>
+		</Member>
+	</FontFamily>
+<!-- Tabs Panel -->
+	<Frame name="vdwTabsPanel" frameStrata="DIALOG" frameLevel="0" enableKeyboard="true" enableMouse="true" movable="true" clampedToScreen="true" dontSavePosition="true" hidden="true" virtual="true">
+		<Anchors>
+			<Anchor point="RIGHT" relativePoint="RIGHT" x="0" y="0"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND" textureSubLevel="-7">
+				<Texture parentKey="BGtexture"/>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button parentKey="ExitButton" registerForClicks="AnyUp" frameLevel="256">
+				<Size x="16" y="16"/>
+				<Anchors>
+					<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" x="-4" y="-4"/>
+				</Anchors>
+				<NormalTexture atlas="communities-icon-redx" desaturated="false" alpha="0.6"/>
+				<PushedTexture atlas="communities-icon-redx" desaturated="true" alpha="0.4"/>
+				<Scripts>
+					<OnLeave>
+						VDW.Tooltip_Hide()
+					</OnLeave>
+					<OnClick>
+						if button == "LeftButton" and down == false then
+							self:GetParent():Hide()
+						end
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				self:RegisterEvent("PLAYER_REGEN_DISABLED")
+			</OnLoad>
+			<OnEvent>
+				if event == "PLAYER_REGEN_DISABLED" then self:Hide() end
+			</OnEvent>
+			<OnKeyDown>
+				if key == "ESCAPE" then self:SetPropagateKeyboardInput(false) self:Hide() else self:SetPropagateKeyboardInput(true) end
+			</OnKeyDown>
+			<OnHide>
+				PlaySound(830, "Master")
+			</OnHide>
+		</Scripts>
+	</Frame>
+<!-- Tabs button -->
+	<Button name="vdwTabsButton" registerForClicks="AnyUp" frameLevel="256" virtual="true">
+		<Size x="128" y="32" />
+		<ButtonText parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="CENTER"/>
+		<NormalTexture atlas="common-gray-button-entrybox-center"/>
+		<HighlightTexture atlas="Adventures_MissionList_Highlight" desaturated="true" alphaMode="ADD"/>
+	</Button>
+<!-- Options Panel -->
+	<Frame name="vdwOptionsPanel" inherits="InsetFrameTemplate4" frameStrata="DIALOG" frameLevel="0" clampedToScreen="true" hidden="true" virtual="true">
+		<Size x="480" y="452"/>
+		<Layers>
+			<Layer level="BACKGROUND" textureSubLevel="-7">
+				<Texture parentKey="BGtexture" setAllPoints="true"/>
+			</Layer>
+			<Layer level="BACKGROUND" textureSubLevel="7">
+				<Texture parentKey="BGlogo" file="Interface\AddOns\VDW\media\logos\P_A_transparent.png" alphaMode="BLEND" alpha="0.3">
+					<Size x="64" y="64"/>
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" x="0" y="-8"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Title" font="vdw_FFshadow_22" justifyV="MIDDLE" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="TOP" x="0" y="-14"/>
+					</Anchors>
+				</FontString>
+				<FontString parentKey="TopTxt" font="vdw_NFshadow_15" justifyV="MIDDLE" justifyH="CENTER">
+					<Anchors>
+						<Anchor point="TOP" relativeKey="$parent.Title" relativePoint="BOTTOM" x="0" y="-8"/>
+					</Anchors>
+					<Scripts>
+						<OnShow>
+							self:SetWidth(self:GetParent():GetWidth()*0.95)
+						</OnShow>
+					</Scripts>
+				</FontString>
+				<FontString parentKey="BottomRightTxt" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" x="-2" y="4"/>
+					</Anchors>
+					<Scripts>
+						<OnShow>
+							self:SetWidth(self:GetParent():GetWidth()*0.95)
+						</OnShow>
+					</Scripts>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnShow>
+				PlaySound(875, "Master")
+			</OnShow>
+		</Scripts>
+	</Frame>
+<!-- Box Options -->
+	<Frame name="vdwOptionsBox" frameLevel="128" enableMouse="false" clampedToScreen="true" hidden="false" virtual="true">
+		<Size x="280" y="88"/>
+		<Layers>
+			<Layer level="BORDER">
+				<Texture parentKey="BorderTop" file="Interface\Common\ThinBorder-Top" alphaMode="BLEND" alpha="0.4">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativePoint="TOPLEFT" x="3" y="0"/>
+						<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" x="-3" y="0"/>
+					</Anchors>
+					<Size y="18"/>
+				</Texture>
+				<Texture parentKey="BorderBottom" file="Interface\Common\ThinBorder-Top" alphaMode="BLEND" alpha="1">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" x="3" y="-11"/>
+						<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" x="-3" y="-11"/>
+					</Anchors>
+					<Size y="18"/>
+				</Texture>
+				<Texture parentKey="BorderLeft" file="Interface\Common\ThinBorder-Left" alphaMode="BLEND" alpha="1">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativePoint="TOPLEFT" x="0" y="-3"/>
+						<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMLEFT" x="0" y="3"/>
+					</Anchors>
+					<Size x="18"/>
+				</Texture>
+				<Texture parentKey="BorderRight" file="Interface\Common\ThinBorder-Right" alphaMode="BLEND" alpha="0.6">
+					<Anchors>
+						<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" x="0" y="-3"/>
+						<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" x="0" y="3"/>
+					</Anchors>
+					<Size x="18"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Title" font="vdw_FFshadow_18" justifyV="MIDDLE" justifyH="CENTER" >
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP" x="0" y="-8"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Frame>
+<!-- Pop Out -->
+	<Button name="vdwPopOut" frameLevel="256" registerForClicks="AnyUp" clampedToScreen="true" virtual="true">
+		<Size x="128" y="32" />
+		<ButtonText parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="CENTER" wordwrap="false" maxLines="1"/>
+		<NormalTexture parentKey="NormalTexture" atlas="charactercreate-customize-dropdownbox-open"/>
+		<PushedTexture parentKey="PushedTexture" atlas="charactercreate-customize-dropdownbox"/>
+		<HighlightTexture parentKey="HighlightTexture" atlas="charactercreate-customize-dropdownbox-hover" alphaMode="ADD" alpha="0.6"/>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Title" font="vdw_FFshadow_15" justifyV="MIDDLE" justifyH="CENTER" >
+					<Anchors>
+						<Anchor point="TOP" relativePoint="TOP" x="0" y="8"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				self.Text:SetWidth(self:GetWidth()-16)
+			</OnLoad>
+		</Scripts>
+	</Button>
+<!-- Pop Out Button -->
+	<Button name="vdwPopOutButton" frameLevel="512" registerForClicks="AnyUp" hidden="true" clampedToScreen="true" virtual="true">
+		<Size x="160" y="24"/>
+		<ButtonText parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="CENTER"/>
+		<NormalTexture atlas="AftLevelup-ToastBG"/>
+		<HighlightTexture atlas="Adventures_MissionList_Highlight" desaturated="true" alphaMode="ADD"/>
+	</Button>
+<!-- Check Box -->
+	<CheckButton name="vdwCheckButton" inherits="SettingsCheckBoxTemplate" frameLevel="256" clampedToScreen="true" virtual="true">
+		<Size x="22" y="22"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="LEFT" >
+					<Anchors>
+						<Anchor point="LEFT" relativePoint="RIGHT" x="0" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight.blp" alphaMode="ADD"/>
+	</CheckButton>
+<!-- Slider -->	
+	<Frame name="vdwSlider" inherits="MinimalSliderWithSteppersTemplate" frameLevel="256" clampedToScreen="true" virtual="true">
+		<Scripts>
+			<OnLoad>
+				CallbackRegistryMixin.OnLoad(self)
+				local forward = false
+				self.Back:SetScript("OnClick", GenerateClosure(self.OnStepperClicked, self, forward))
+				local backward = true
+				self.Forward:SetScript("OnClick", GenerateClosure(self.OnStepperClicked, self, backward))
+				self:SetScale(1)
+				self.Back:SetHighlightAtlas("Minimal_SliderBar_Button_Left", "ADD")
+				self.Forward:SetHighlightAtlas("Minimal_SliderBar_Button_Right", "ADD")
+				self.TopText:Show()
+				self.MinText:Show()
+				self.MaxText:Show()
+				self.Slider:SetValueStep(1)
+				self:SetWidth(192)
+			</OnLoad>
+		</Scripts>
+	</Frame>
+<!-- Edit Box -->
+	<Frame name="vdwEditBox" inherits="GlowBoxTemplate" frameLevel="128" enableMouse="true" clampedToScreen="true" virtual="true">
+		<Size x="256" y="16"/>
+		<Frames>
+			<EditBox parentKey="WritingLine" inherits="InputBoxScriptTemplate" frameStrata="DIALOG" font="GameFontHighlight" letters="0" blinkSpeed="0.5" numeric="false" alphabeticOnly="false" password="false" multiLine="0" historyLines="0" autoFocus="false" ignoreArrows="false" countInvisibleLetters="false" invisibleBytes="nil">
+				<Anchors>
+					<Anchor point="CENTER" relativePoint="CENTER" x="0" y="0"/>
+				</Anchors>
+			</EditBox>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				self["GlowTopLeft"]:SetDesaturation(1)
+				self["GlowTopRight"]:SetDesaturation(1)
+				self["GlowBottomLeft"]:SetDesaturation(1)
+				self["GlowBottomRight"]:SetDesaturation(1)
+				self["GlowTop"]:SetDesaturation(1)
+				self["GlowBottom"]:SetDesaturation(1)
+				self["GlowLeft"]:SetDesaturation(1)
+				self["GlowRight"]:SetDesaturation(1)
+			</OnLoad>
+		</Scripts>
+	</Frame>
+<!-- Button -->
+	<Button name="vdwButton" registerForClicks="AnyUp" frameLevel="256" clampedToScreen="true" virtual="true">
+		<Size x="128" y="32" />
+		<ButtonText parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="CENTER"/>
+		<NormalTexture atlas="common-button-tertiary-normal-small"/>
+		<PushedTexture atlas="common-button-tertiary-pressed-small"/>
+		<HighlightTexture atlas="common-button-tertiary-hover-small" desaturated="true" alphaMode="ADD"/>
+	</Button>
+</Ui>

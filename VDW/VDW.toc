@@ -1,8 +1,8 @@
-## Interface: 110207, 120000
+## Interface: 120001
 ## IconAtlas: Relic-Water-TraitBG
 ## Title: Voodoo |cFF3B9CCDda|r WoW |cFF3B9CCDCore|r
 ## Notes: |cFFF0E68CShared |cFF3B9CCDmojo|r for the whole |cFF3B9CCDsuite|r!|n(localization, UI helpers, shared functions for the |cFF3B9CCDVoodoo|r da |cFF3B9CCDWoW|r suite)|r
-## Version: 1.00.00
+## Version: 1.00.02
 ## Category: Libraries
 ## Category-deDE: Bibliotheken
 ## Category-esES: Bibliotecas

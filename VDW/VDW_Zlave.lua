@@ -1,4 +1,5 @@
--- prefix for game tool tip --
+--VDW = VDW or {}
+-- prefix for game tool tip
 VDW._prefixCache = VDW._prefixCache or {}
 function VDW.Prefix(addonName)
 	local cache = VDW._prefixCache

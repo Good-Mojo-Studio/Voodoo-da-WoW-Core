@@ -2,21 +2,13 @@
 ## IconAtlas: Relic-Water-TraitBG
 ## Title: Voodoo |cFF3B9CCDda|r WoW |cFF3B9CCDCore|r
 ## Notes: |cFFF0E68CShared |cFF3B9CCDmojo|r for the whole |cFF3B9CCDsuite|r!|n(localization, UI helpers, shared functions for the |cFF3B9CCDVoodoo|r da |cFF3B9CCDWoW|r suite)|r
-## Version: 1.00.02
-## Category: Libraries
-## Category-deDE: Bibliotheken
-## Category-esES: Bibliotecas
-## Category-esMX: Bibliotecas
-## Category-frFR: Bibliothèques
-## Category-itIT: Librerie
-## Category-ptBR: Bibliotecas
-## Category-ruRU: Библиотеки
-## Category-zhCN: 函数库
-## Category-zhTW: 函式庫
+## Version: 1.00.03
 ## Group: VDWS
 ## DefaultState: enabled
 ## Author: The_Indolent
 ## X-Website: https://panosanastasiou.rocks/
 
+VDW_Fonts.xml
 VDW_Locale.lua
+VDW_Translate.lua
 VDW_Virtuals.xml

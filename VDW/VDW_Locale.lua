@@ -1,5 +1,4 @@
 -- some variables --
-VDW = VDW or {}
 VDW.Local = VDW.Local or {}
 VDW.Local.Override = VDW.Local.Override or {}
 -- localization --

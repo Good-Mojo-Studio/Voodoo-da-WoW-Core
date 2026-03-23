@@ -1,4 +1,9 @@
---VDW = VDW or {}
+VDW = VDW or {}
+VDWtranslate = VDWtranslate or {}
+VDWtranslate.Global = VDWtranslate.Global or {}
+VDWtranslate.Local = VDWtranslate.Local or {}
+VDWfunctions = VDWfunctions or {}
+VDWvariables = VDWvariables or {}
 -- prefix for game tool tip
 VDW._prefixCache = VDW._prefixCache or {}
 function VDW.Prefix(addonName)

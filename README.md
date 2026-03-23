@@ -4,21 +4,26 @@
 
 ---
 
-This a library for the <span style="color:#E67E23;">Voodoo da WoW Suite</span> and also for:
+Shared mojo for the Good Mojo Studio addons!
 
-- <span style="color:#E67E23;">Funky Mojo Changer</span> (FMC)
-- <span style="color:#E67E23;">Mirrors of Voodoo</span> (MOV)
-- <span style="color:#E67E23;">Sweet Sound of Auction House</span> (SSOA)
-- <span style="color:#E67E23;">Voodoo Casting Bar</span> (VCB)
+---
+
+This a library for
+
+- Voodoo da WoW Suite (VDWS) [https://www.curseforge.com/wow/addons/voodoo-da-wow-suite](https://www.curseforge.com/wow/addons/voodoo-da-wow-suite)
+- Funky Mojo Changer (FMC) [https://www.curseforge.com/wow/addons/funky-mojo-changer](https://www.curseforge.com/wow/addons/funky-mojo-changer)
+- Mirrors of Voodoo (MOV) [https://www.curseforge.com/wow/addons/mirrors-of-voodoo](https://www.curseforge.com/wow/addons/mirrors-of-voodoo)
+- Sweet Sound of Auction House (SSOA) [https://www.curseforge.com/wow/addons/sweet-sound-of-auction-house](https://www.curseforge.com/wow/addons/sweet-sound-of-auction-house)
+- Voodoo Casting Bar (VCB) [https://www.curseforge.com/wow/addons/voodoo-casting-bar](https://www.curseforge.com/wow/addons/voodoo-casting-bar)
 
 ---
 
 The library includes:
 
-- shared library
-- localization
+- Shared library
+- Localization
 - UI helpers
-- shared functions
+- Shared functions
 
 ---
 

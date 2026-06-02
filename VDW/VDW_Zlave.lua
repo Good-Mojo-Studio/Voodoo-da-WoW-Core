@@ -73,9 +73,10 @@ VDW.ColorHex = VDW.ColorHex or {}
 -- addons colors --
 VDW.ColorHex.FMC = { Main = "F0E68CFF", High = "B57E25FF" }
 VDW.ColorHex.MOV = { Main = "D1D9BFFF", High = "BCA220FF" }
-VDW.ColorHex.SSOA = { Main = "B09F8DFF", High = "EEE991FF" }
+VDW.ColorHex.SSOA = { Main = "FFDF80FF", High = "AE8200FF" }
 VDW.ColorHex.VCB = { Main = "F0E68CFF", High = "9ACD32FF" }
-VDW.ColorHex.VDWS = { Main = "F0E68CFF", High = "974CE7FF" }
+VDW.ColorHex.VDW = { Main = "CFFE9FFF", High = "9EEBFEFF" }
+VDW.ColorHex.VDWS = { Main = "94D1BDFF", High = "3B9CCDFF" }
 -- helping function --
 local function MakeNoAlpha(color)
 	local r, g, b = color:GetRGB()

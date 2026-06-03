@@ -71,7 +71,7 @@ end
 VDW.Colors = VDW.Colors or {}
 VDW.ColorHex = VDW.ColorHex or {}
 -- addons colors --
-VDW.ColorHex.FMC = { Main = "F0E68CFF", High = "B57E25FF" }
+VDW.ColorHex.FMC = { Main = "D79128FF", High = "F2CF72FF" }
 VDW.ColorHex.MOV = { Main = "D1D9BFFF", High = "BCA220FF" }
 VDW.ColorHex.SSOA = { Main = "FFDF80FF", High = "AE8200FF" }
 VDW.ColorHex.VCB = { Main = "F0E68CFF", High = "9ACD32FF" }

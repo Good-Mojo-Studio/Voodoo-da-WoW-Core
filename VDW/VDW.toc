@@ -2,7 +2,7 @@
 ## IconAtlas: CovenantChoice-Celebration-Content-Soulbind
 ## Title: Voodoo |cFF9EEBFEda|r WoW |cFF9EEBFECore|r
 ## Notes: |cFFCFFE9FShared |cFF9EEBFEmojo|r for the whole |cFF9EEBFEsuite|r!|n(localization, UI helpers, shared functions for the |cFF9EEBFEVoodoo|r da |cFF9EEBFEWoW|r suite)|r
-## Version: 1.00.06
+## Version: 1.00.07
 ## Group: VDWS
 ## DefaultState: enabled
 ## Author: The_Indolent

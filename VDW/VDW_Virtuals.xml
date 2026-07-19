@@ -61,6 +61,9 @@
 	</Button>
 <!-- Options Panel -->
 	<Frame name="vdwOptionsPanel" inherits="InsetFrameTemplate4" frameStrata="DIALOG" frameLevel="0" clampedToScreen="true" hidden="true" virtual="true">
+		<Anchors>
+			<Anchor point="TOPLEFT" relativePoint="TOPLEFT" x="0" y="0"/>
+		</Anchors>
 		<Size x="480" y="452"/>
 		<Layers>
 			<Layer level="BACKGROUND" textureSubLevel="-7">

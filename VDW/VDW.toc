@@ -1,17 +1,19 @@
-## Interface: 120005
+## Interface: 120007
 ## IconAtlas: CovenantChoice-Celebration-Content-Soulbind
 ## Title: Voodoo |cFF9EEBFEda|r WoW |cFF9EEBFECore|r
 ## Notes: |cFFCFFE9FShared |cFF9EEBFEmojo|r for the whole |cFF9EEBFEsuite|r!|n(localization, UI helpers, shared functions for the |cFF9EEBFEVoodoo|r da |cFF9EEBFEWoW|r suite)|r
-## Version: 1.00.07
+## Version: 1.00.08
 ## Group: VDWS
 ## DefaultState: enabled
 ## Author: The_Indolent
 ## X-Website: https://panosanastasiou.rocks/
 
+VDW_Globals.lua
+
 fontsFamily\VDW_Fonts_Funky.xml
 fontsFamily\VDW_Fonts_Groovy.xml
 fontsFamily\VDW_Fonts_Normal.xml
-VDW_Virtuals.xml
+
 translate\VDW_Translate_deDE.lua
 translate\VDW_Translate_esES.lua
 translate\VDW_Translate_esMX.lua
@@ -24,3 +26,5 @@ translate\VDW_Translate_zhCN.lua
 translate\VDW_Translate_zhTW.lua
 VDW_Translate.lua
 VDW_Locale.lua
+
+VDW_Virtuals.xml

@@ -1,37 +1,35 @@
 local base = {
+--A
 	ADDON_IS_STATE = "The addon %s is %s",
-	COMBAT_LOCKDOWN = "You can't do that while in combat!",
-	MOVING_LOCKDOWN = "You can't do that while you're moving!",
-	OPEN_SETTINGS_MAIN = "Open the main settings panel",
-	DRAG_ME_TO_MOVE = "and drag to move me!",
-	LEFT_CLICK = "Left Click",
-	RIGHT_CLICK = "Right Click",
--- A
+	ANIMATION = "Animation",
 	ARENA_CAST_BAR = "Arena Cast Bars",
 	ASCENDING = "Ascending",
-	ANIMATION = "Animation",
--- B
+--B
 	BANNER = "Banner",
 	BAR = "Bar",
 	BAR_BORDER = "Bar Border",
 	BAR_FILL = "Bar Fill",
 	BAR_FILL_TIP = "Select %s |n|n1. Standard means that the bar fills from left to right as values increase.|n|n2. Reversed means that the bar fills from right to left as values increase.|n|n3. Center means that the bar grows outward from the center",
 	BAR_STATUS = "Bar Status",
-	BOSS_CAST_BAR = "Boss Cast Bars",
+	BELLS = "Bells",
 	BORDER = "Border",
+	BOSS_CAST_BAR = "Boss Cast Bars",
 	BOTH = "Both",
 	BOTTOM = "Bottom",
 	BOTTOMLEFT = "Bottom Left",
 	BOTTOMRIGHT = "Bottom Right",
--- C
+--C
+	CASH_MACHINE = "Cash Machine",
 	CAST_BAR_SIZE = "Cast Bar Size",
 	CAST_TIME_BOTH = "Cast Time (Current/Total)",
 	CAST_TIME_CURRENT = "Current Cast Time",
 	CAST_TIME_TOTAL = "Total Cast Time",
 	CENTER = "Center",
-	CHECK_IF_YOU_WANT_TO_TIP = "Check me! if you want to %s.",
-	CHECK_IF_YOU_WANT_TO_SHOW = "Check me! if you want the %s to be shown",
+	CHAT_DEFAULT_SHOW_MESSAGE = "Show the message in the default chat",
+	CHECK_IF_YOU_WANT_TO_SHOW_MESSAGE_CHAT = "Check me! if you want the notification to be shown in the default chat",
 	CHECK_IF_YOU_WANT_TO_COLOR_BAR = "Check! me if you want to color the bar while your %s is on cooldown.",
+	CHECK_IF_YOU_WANT_TO_SHOW = "Check me! if you want the %s to be shown",
+	CHECK_IF_YOU_WANT_TO_TIP = "Check me! if you want to %s.",
 	CLASS = "Class",
 	CLASS_ARTIFACT = "Class Artifact",
 	CLASS_ROUND = "Class Round",
@@ -41,72 +39,89 @@ local base = {
 	COLOR = "Color",
 	COLOR_THE_BAR_IF_COOLDOWN = "Color the bar if my %s is on cooldown.",
 	COLOR_TIP = "Which color do you want for %s?",
+	COMBAT_LOCKDOWN = "You can't do that while in combat!",
 	CUSTOM = "Custom",
--- D
+--D
 	DECIMALS = "Decimals",
 	DECIMALS_TIP = "How many decimal places do you want to show?",
 	DEFAULT = "Default",
 	DESCENDING = "Descending",
 	DIRECTION = "Direction",
-	DIRECTION_TIMER_TIP = "How should the timer count?|n|n'Both' means the timer counts up while casting and counts down while channeling!",
 	DIRECTION_POPOUT_TIP = "Choose the direction of the %s Popout Button",
+	DIRECTION_TIMER_TIP = "How should the timer count?|n|n'Both' means the timer counts up while casting and counts down while channeling!",
 	DOWNWARD = "Downward",
--- E
+	DRAG_ME_TO_MOVE = "and drag to move me!",
+--E
 	ENABLE_GLOBAL_COOLDOWN = "Enable Global Cooldown",
--- F
+--F
 	FACTION = "Faction",
 	FACTION_NEW = "Faction New",
 	FACTION_OLD = "Faction Old",
 	FACTION_ROUND = "Faction Round",
 	FOCUS_CAST_BAR = "Focus Cast Bar",
--- G
+--G
 	GLOBAL_COOLDOWN = "Global Cooldown",
--- H
+--H
 	HEIGHT = "Height",
 	HERO = "Hero",
+	HERO_NOT_SELECTED = "You haven't choose a Hero yet",
 	HIDE = "Hide",
--- I
+--I
 	ICON = "Icon",
 	IMPORTANT_NOTES = "Important Notes",
--- L
+--L
 	LATENCY_BAR = "Latency Bar",
 	LAYOUT = "Layout",
 	LAYOUT_INSTANT_TIP = "Select a layout for %s |n|n1. Default means that the Instant Cast Bar follows the Player Cast Bar setting.|n|n2. Custom means that you need to set it up manually.",
 	LEFT = "Left",
-	LOCKING = "Locking",
-	LOCKING_TIP_BANNER = "1. Locked: Attach the banner to the player casting bar.|n|n2. Unlocked: Unlock the banner so you can move it anywhere",
-	LOCKING_TIP_TARGET = "1. Locked: Attach the cast bar to the target frame.|n|n2. Unlocked: Unlock the cast bar so you can move it anywhere.|n|nAfter changing this option, the UI will reload!",
-	LOCKING_TIP_FOCUS  = "1. Locked: Attach the cast bar to the focus frame.|n|n2. Unlocked: Unlock the cast bar so you can move it anywhere.|n|nAfter changing this option, the UI will reload!",
-	LOCKING_TIP_BOSS   = "1. Locked: Attach the cast bars to the boss frames.|n|n2. Unlocked: Unlock the cast bars so you can move them anywhere.|n|nAfter changing this option, the UI will reload!",
-	LOCKING_TIP_ARENA  = "1. Locked: Attach the cast bars to the arena frames.|n|n2. Unlocked: Unlock the cast bars so you can move them anywhere.|n|nAfter changing this option, the UI will reload!",
+	LEFT_CLICK = "Left Click",
 	LOCKED = "Locked",
+	LOCKING = "Locking",
+	LOCKING_TIP_ARENA  = "1. Locked: Attach the cast bars to the arena frames.|n|n2. Unlocked: Unlock the cast bars so you can move them anywhere.|n|nAfter changing this option, the UI will reload!",
+	LOCKING_TIP_BANNER = "1. Locked: Attach the banner to the player casting bar.|n|n2. Unlocked: Unlock the banner so you can move it anywhere",
+	LOCKING_TIP_BOSS   = "1. Locked: Attach the cast bars to the boss frames.|n|n2. Unlocked: Unlock the cast bars so you can move them anywhere.|n|nAfter changing this option, the UI will reload!",
+	LOCKING_TIP_FOCUS  = "1. Locked: Attach the cast bar to the focus frame.|n|n2. Unlocked: Unlock the cast bar so you can move it anywhere.|n|nAfter changing this option, the UI will reload!",
+	LOCKING_TIP_TARGET = "1. Locked: Attach the cast bar to the target frame.|n|n2. Unlocked: Unlock the cast bar so you can move it anywhere.|n|nAfter changing this option, the UI will reload!",
 	LOOT_BUTTONS = "Loot Buttons",
+	LOOT_BUTTONS_LOW_LVL = "You don't have Loot Specialization",
+	LOOT_BUTTONS_NOT_SHOWN = "Loot buttons are not shown (Funky Mojo Changer)",
 	LOOT_BUTTONS_TIP = "to change your loot specialization into: %s Specialization",
 	LOOT_BUTTONS_TIP_CURRENT = "to change your loot specialization into: Current Specialization (%s)",
 	LOOT_BUTTONS_WRN_CURRENT = "|cnYELLOW_FONT_COLOR:Loot Specialization set to: Current Specialization (%s)|r",
--- M
+--M
 	MODERN = "Modern",
--- N
+	MOVING_LOCKDOWN = "You can't do that while you're moving!",
+--N
+	NAME = "Name",
+	NONE = "None",
 	NOTE = "Note",
--- O
+--O
+	OPEN_SETTINGS_MAIN = "Open the main settings panel",
 	OPTIONS_FOR = "Options for %s",
--- P
+--P
 	PLAYER_CAST_BAR = "Player Cast Bar",
 	POSITION = "Position",
 	POSITION_TIP = "Where should %s appear?",
--- Q
+	PRAY_TO_GODS = "Pray to the Gods",
+	PRAY_TO_GODS_TIP = "Check me! if you want to Pray to the Gods",
+--Q
 	QUEUE_BAR = "Spell Queue Window",
--- R
+--R
 	REVERSED = "Reversed",
 	RIGHT = "Right",
+	RIGHT_CLICK = "Right Click",
 	RUNES = "Runes",
--- S
+--S
 	SCALE  = "Scale",
-	SHOW = "Show",
 	SHIELD_ICON = "Shield Icon",
+	SHOW = "Show",
 	SIZE = "Size",
 	SLIDER_TIP = "You can also use the mouse wheel or the edge buttons to change the value",
+	SOUNDS = "Sounds",
+	SOUND_TIP = "Which sound would you like to hear, when %s happens?",
 	SPECIALIZATION_BUTTONS = "Specialization Buttons",
+	SPECIALIZATION_BUTTONS_LOW_LVL = "You don't have Specialization",
+	SPECIALIZATION_BUTTONS_NOT_SHOWN = "Specialization buttons are not shown  (Funky Mojo Changer)",
 	SPECIALIZATION_BUTTONS_TIP = "to change into:",
 	SPELL_ICON = "Spell Icon",
 	SPELL_NAME = "Spell Name",
@@ -115,25 +130,53 @@ local base = {
 	STANDARD = "Standard",
 	STYLE = "Style",
 	STYLE_TIP = "Which style do you want for %s?",
--- T
-	TALENTS = "Talents",
+--T
 	TALENT_BUTTONS = "Talent Buttons",
+	TALENT_BUTTONS_LOW_LVL = "You don't have Talents",
+	TALENT_BUTTONS_NOT_SHOWN = "Talent buttons are not shown  (Funky Mojo Changer)",
 	TALENT_BUTTONS_TIP = "to choose a talent loadout",
+	TALENTS = "Talents",
 	TARGET_CAST_BAR = "Target Cast Bar",
 	TEXT_BORDER = "Text Border",
 	TIME = "Time",
 	TOP = "Top",
 	TOPLEFT = "Top Left",
 	TOPRIGHT = "Top Right",
--- U
+--U
 	UNLOCK_CAST_BAR = "Unlock Cast Bar",
 	UNLOCKED = "Unlocked",
 	UPWARD = "Upward",
--- V
+--V
 	VISIBILITY = "Visibility",
 	VISIBILITY_TIP = "Do you want to show %s?",
--- W
+--W
 	WIDTH = "Width",
+-- Z
+	ZONG = "Zong",
+-- auction house
+	AUCTION_SOLD = "Auction Sold",
+	AUCTION_EXPIRED = "Auction Expired",
+	AUCTION_WON = "Auction Won",
+	AUCTION_OUTBID = "Auction Outbid",
+	BID_PLACED = "Bid Placed",
+	AUCTION_REMOVED = "Auction Removed",
+	AUCTION_CREATED = "Auction Created",
+	WRN_BID_PLACED = "There was a bid on your Auction",
+	WRN_AUCTION_REMOVED = "Your Auction have been removed!",
+	WRN_AUCTION_WON = "You have won the Auction of %s",
+	WRN_AUCTION_OUTBID = "Someone outbid you in the Auction of %s",
+	WRN_AUCTION_SOLD = "Your Auction of %s have been sold!",
+	WRN_AUCTION_EXPIRED = "Your Auction of %s have been expired!",
+-- emotes
+	CHEER = "Cheer",
+	CONGRATULATE = "Congratulate",
+	DANCE = "Dance",
+	WHOA = "Whoa",
+	MOURN = "Mourn",
+	ANGRY = "Angry",
+	VIOLIN = "Violin",
+	OOPS = "Oops",
+	EMOTE_TIP = "Which emote would you like to do, when %s happens?",
 -- notes --
 	NOTES_HIDE_SHOW_BUTTONS = "When you hide or show the buttons the game will be RELOADED!",
 	NOTES_DIRECTION_BUTTONS = "When you choose the direction of the buttons the game will RELOADED!",

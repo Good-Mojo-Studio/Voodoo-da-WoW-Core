@@ -79,7 +79,7 @@ VDW.Colors = VDW.Colors or {}
 VDW.ColorHex = VDW.ColorHex or {}
 -- addons colors
 VDW.ColorHex.FMC = { Main = "D79128FF", High = "F2CF72FF" }
-VDW.ColorHex.MOV = { Main = "D1D9BFFF", High = "BCA220FF" }
+VDW.ColorHex.MOV = { Main = "86A7BFFF", High = "BAD6EBFF" }
 VDW.ColorHex.SSOA = { Main = "FFDF80FF", High = "AE8200FF" }
 VDW.ColorHex.VCB = { Main = "F0E68CFF", High = "9ACD32FF" }
 VDW.ColorHex.VDW = { Main = "CFFE9FFF", High = "9EEBFEFF" }
@@ -111,8 +111,11 @@ function VDW.GetAddonColors(addonName)
 end
 -- addons background
 VDW.Background = VDW.Background or {}
-VDW.Background.FMC = "bank-frame-background"
+VDW.Background.FMC = "talents-heroclass-choicepopup-background"
+VDW.Background.MOV = "shop-frame-carousel-large-bg"
+VDW.Background.SSOA = "GarrMissionLocation-Maw-bg-02"
 VDW.Background.VCB = "UI-Journeys-BG"
+VDW.Background.VDWS = "Forge-Background"
 -- cache player globals
 local function CachePlayerInfo()
 	-- class id
@@ -278,10 +281,12 @@ end
 function VDW.CheckButtonTick(self, color1)
 	self.Text:SetTextColor(color1:GetRGB())
 	self.Text:SetAlpha(1)
+	PlaySound(858, "Master")
 end
 -- checkButton UnTick
 function VDW.CheckButtonUnTick(self)
 	self.Text:SetTextColor(0.35, 0.35, 0.35, 0.8)
+	PlaySound(858, "Master")
 end
 -- checkButton Check
 function VDW.CheckButtonCheck(panel, box, checkbutton, color1)
@@ -311,7 +316,7 @@ function VDW.CreateOptionsSlider(addonName, panel, box, slider, minText, maxText
 	panel["Box"..box]["Slider"..slider].Slider:HookScript("OnLeave", function(self) VDW.Tooltip_Hide() end)
 	panel["Box"..box]["Slider"..slider].Slider:SetScript("OnMouseWheel", VDW.MouseWheelSlider)
 end
--- create edit box --
+-- create edit box
 function VDW.CreateEditBox(panel, box, editBox, color1)
 	-- colors
 	panel["Box"..box]["EditBox"..editBox].GlowTopLeft:SetVertexColor(color1:GetRGB())
@@ -343,16 +348,22 @@ function VDW.CreateImportantNotesProfiles(addonName, panel, box, color1, color2)
 	panel["Box"..box].Notes:SetText("|A:"..C_AddOns.GetAddOnMetadata(addonName, "IconAtlas")..":16:16|a"..color2:WrapTextInColorCode(VDWtranslate.Global.NOTE.." 1: ")..VDWtranslate.Global.NOTES_PROFILES)
 end
 -- create background of the tabs
-function VDW.CreateBackgroundTab(option, panel, tab, atlas, desaturation, color1, color2)
-local OptionsW = option[panel]:GetWidth()
-	option:SetWidth(option[tab]:GetWidth() + OptionsW)
-	option:SetHeight(option[panel]:GetHeight())
+function VDW.CreateBackgroundTab(option, atlas, desaturation, color1, color2)
+local OptionsW = option.Panel1:GetWidth()
+	option:SetWidth(option.Tab1:GetWidth() + OptionsW)
+	option:SetHeight(option.Panel1:GetHeight())
 	option.BGtexture:ClearAllPoints()
 	option.BGtexture:SetPoint("TOPRIGHT", option, "TOPRIGHT", 0, 0)
 	option.BGtexture:SetPoint("BOTTOMLEFT", option, "BOTTOMLEFT", OptionsW, 0)
 	option.BGtexture:SetAtlas(atlas, false)
 	option.BGtexture:SetDesaturation(desaturation)
 	option.BGtexture:SetGradient("VERTICAL", color1, color2)
+end
+-- move the frame
+function VDW.MoveTheFrame(option, clickMouse)
+	option:RegisterForDrag(clickMouse)
+	option:SetScript("OnDragStart", option.StartMoving)
+	option:SetScript("OnDragStop", option.StopMovingOrSizing)
 end
 -- Mouse Wheel on Sliders
 function VDW.MouseWheelSlider(self, delta)

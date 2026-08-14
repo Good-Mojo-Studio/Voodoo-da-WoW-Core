@@ -3,6 +3,7 @@ local base = {
 	ADDON_IS_STATE = "The addon %s is %s",
 	ANIMATION = "Animation",
 	ARENA_CAST_BAR = "Arena Cast Bars",
+	ARTWORK = "Artwork",
 	ASCENDING = "Ascending",
 --B
 	BANNER = "Banner",
@@ -14,10 +15,12 @@ local base = {
 	BELLS = "Bells",
 	BORDER = "Border",
 	BOSS_CAST_BAR = "Boss Cast Bars",
+	BOSSY_GROOVE = "Bossy Groove",
 	BOTH = "Both",
 	BOTTOM = "Bottom",
 	BOTTOMLEFT = "Bottom Left",
 	BOTTOMRIGHT = "Bottom Right",
+	BRANCHES = "Branches",
 --C
 	CASH_MACHINE = "Cash Machine",
 	CAST_BAR_SIZE = "Cast Bar Size",
@@ -45,6 +48,7 @@ local base = {
 	DECIMALS = "Decimals",
 	DECIMALS_TIP = "How many decimal places do you want to show?",
 	DEFAULT = "Default",
+	DESATURATION = "Desaturation",
 	DESCENDING = "Descending",
 	DIRECTION = "Direction",
 	DIRECTION_POPOUT_TIP = "Choose the direction of the %s Popout Button",
@@ -52,20 +56,26 @@ local base = {
 	DOWNWARD = "Downward",
 	DRAG_ME_TO_MOVE = "and drag to move me!",
 --E
+	EDGES_ARTWORK = "Edges Artwork",
 	ENABLE_GLOBAL_COOLDOWN = "Enable Global Cooldown",
+	EMBROIDERY = "Embroidery",
 --F
 	FACTION = "Faction",
 	FACTION_NEW = "Faction New",
 	FACTION_OLD = "Faction Old",
 	FACTION_ROUND = "Faction Round",
+	FILIGREE = "Filigree",
+	FILIGREE_CORNER = "Filigree with corner",
 	FOCUS_CAST_BAR = "Focus Cast Bar",
 --G
 	GLOBAL_COOLDOWN = "Global Cooldown",
+	GRADIENT = "Gradient",
 --H
 	HEIGHT = "Height",
 	HERO = "Hero",
 	HERO_NOT_SELECTED = "You haven't choose a Hero yet",
 	HIDE = "Hide",
+	HORIZONTAL = "Horizontal",
 --I
 	ICON = "Icon",
 	IMPORTANT_NOTES = "Important Notes",
@@ -88,22 +98,28 @@ local base = {
 	LOOT_BUTTONS_TIP = "to change your loot specialization into: %s Specialization",
 	LOOT_BUTTONS_TIP_CURRENT = "to change your loot specialization into: Current Specialization (%s)",
 	LOOT_BUTTONS_WRN_CURRENT = "|cnYELLOW_FONT_COLOR:Loot Specialization set to: Current Specialization (%s)|r",
+	LOOTY_GROOVE = "Looty Groove",
 --M
 	MODERN = "Modern",
 	MOVING_LOCKDOWN = "You can't do that while you're moving!",
+	MICRO_MENU_BAR = "Micromenu Bar",
 --N
 	NAME = "Name",
 	NONE = "None",
 	NOTE = "Note",
 --O
 	OPEN_SETTINGS_MAIN = "Open the main settings panel",
+	OPACITY = "Opacity",
 	OPTIONS_FOR = "Options for %s",
+	ORIENTATION = "Orientation",
+	ORIENTATION_COLOR_TIP = "Which orientation do you want for gradient color?",
 --P
 	PLAYER_CAST_BAR = "Player Cast Bar",
 	POSITION = "Position",
 	POSITION_TIP = "Where should %s appear?",
 	PRAY_TO_GODS = "Pray to the Gods",
 	PRAY_TO_GODS_TIP = "Check me! if you want to Pray to the Gods",
+	PRESET = "Preset",
 --Q
 	QUEUE_BAR = "Spell Queue Window",
 --R
@@ -117,6 +133,7 @@ local base = {
 	SHOW = "Show",
 	SIZE = "Size",
 	SLIDER_TIP = "You can also use the mouse wheel or the edge buttons to change the value",
+	SOLID = "Solid",
 	SOUNDS = "Sounds",
 	SOUND_TIP = "Which sound would you like to hear, when %s happens?",
 	SPECIALIZATION_BUTTONS = "Specialization Buttons",
@@ -136,6 +153,7 @@ local base = {
 	TALENT_BUTTONS_NOT_SHOWN = "Talent buttons are not shown  (Funky Mojo Changer)",
 	TALENT_BUTTONS_TIP = "to choose a talent loadout",
 	TALENTS = "Talents",
+	TALENTS_NOT_SAME = "The Talents Loadout in the Talents Frame is not the same with the Active one |n|nPlease select the Loadout with name: %s|n|nSo both of them will be the same, there will NOT be any casting or loading!",
 	TARGET_CAST_BAR = "Target Cast Bar",
 	TEXT_BORDER = "Text Border",
 	TIME = "Time",
@@ -149,6 +167,7 @@ local base = {
 --V
 	VISIBILITY = "Visibility",
 	VISIBILITY_TIP = "Do you want to show %s?",
+	VERTICAL = "Vertical",
 --W
 	WIDTH = "Width",
 -- Z

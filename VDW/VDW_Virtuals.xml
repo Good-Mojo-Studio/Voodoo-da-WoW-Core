@@ -48,7 +48,7 @@
 				if key == "ESCAPE" then self:SetPropagateKeyboardInput(false) self:Hide() else self:SetPropagateKeyboardInput(true) end
 			</OnKeyDown>
 			<OnHide>
-				PlaySound(830, "Master")
+				PlaySound(SOUNDKIT.IG_SPELLBOOK_CLOSE, "Master")
 			</OnHide>
 		</Scripts>
 	</Frame>
@@ -117,7 +117,7 @@
 				self.BorderBottomMiddle:SetDesaturated(true)
 			</OnLoad>
 			<OnShow>
-				PlaySound(875, "Master")
+				PlaySound(SOUNDKIT.UI_BAG_SORTING_01, "Master")
 			</OnShow>
 		</Scripts>
 	</Frame>
@@ -258,4 +258,138 @@
 		<PushedTexture parentKey="PushedTexture" atlas="common-button-tertiary-pressed-small"/>
 		<HighlightTexture parentKey="HighlightTexture" atlas="common-button-tertiary-hover-small" desaturated="true" alphaMode="ADD"/>
 	</Button>
+<!-- Color Button -->
+	<Button name="vdwColorButton" registerForClicks="AnyUp, AnyDown" frameLevel="256" clampedToScreen="true" virtual="true">
+		<Size x="18" y="18"/>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString parentKey="Text" font="vdw_NFshadow_13" justifyV="MIDDLE" justifyH="LEFT" >
+					<Anchors>
+						<Anchor point="LEFT" relativePoint="RIGHT" x="4" y="0"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="Color">
+					<Size x="18" y="18"/>
+					<Anchors>
+						<Anchor point="CENTER" relativePoint="CENTER" x="0" y="0"/>
+					</Anchors>
+					<Color r="1" g="1" b="1" a="1" />
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnClick>
+				if button == "LeftButton" then
+					if down == true then
+						self.Color:ClearAllPoints()
+						self.Color:SetPoint("CENTER", self, "CENTER", 1, -1)
+						self.Text:ClearAllPoints()
+						self.Text:SetPoint("LEFT", self, "RIGHT", 5, -1)
+					else
+						self.Color:ClearAllPoints()
+						self.Color:SetPoint("CENTER", self, "CENTER", 0, 0)
+						self.Text:ClearAllPoints()
+						self.Text:SetPoint("LEFT", self, "RIGHT", 4, 0)
+					end
+				end
+			</OnClick>
+		</Scripts>
+	</Button>
+<!-- Scrolling Message Frame -->
+	 <Frame name="vdwScrollMessageFrame" frameStrata="BACKGROUND" frameLevel="0" movable="true" clampedToScreen="true" dontSavePosition="true" hidden="true" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND" textureSubLevel="0">
+                <Texture parentKey="BackgroundColor" setAllPoints="true">
+                    <Color r="0" g="0" b="0" a="0.35"/>
+                </Texture>
+            </Layer>
+            <Layer level="BACKGROUND" textureSubLevel="7">
+                <Texture parentKey="BackgroundAtlas" setAllPoints="true" atlas="Artifacts-BG-Shadow" useAtlasSize="false"/>
+            </Layer>
+        </Layers>
+        <Frames>
+            <ScrollingMessageFrame parentKey="ScrollFrame" frameLevel="126" enableMouse="true" hyperlinksEnabled="true">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativePoint="TOPLEFT" x="8" y="-8"/>
+                    <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" x="-22" y="8"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="OVERLAY">
+                        <FontString parentKey="Title" font="vdw_FFshadow_18" justifyV="MIDDLE" justifyH="CENTER" text="Looty Groove">
+                            <Anchors>
+                                <Anchor point="CENTER" relativePoint="TOP" x="0" y="8"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Frame parentKey="ScrollBar" mixin="MinimalSliderWithSteppersMixin" enableMouse="true">
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativePoint="TOPRIGHT" x="18" y="0"/>
+                                <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT" x="18" y="0"/>
+                            </Anchors>
+                            <Size x="16"/>
+                            <Frames>
+                                <Button parentKey="Back">
+                                    <Size x="17" y="11"/>
+                                    <Anchors>
+                                        <Anchor point="TOP" relativePoint="TOP" x="0" y="0"/>
+                                    </Anchors>
+                                    <NormalTexture parentKey="NormalTexture" atlas="minimal-scrollbar-small-arrow-top" useAtlasSize="true"/>
+                                    <HighlightTexture atlas="minimal-scrollbar-small-arrow-top" useAtlasSize="true" alphaMode="ADD"/>
+                                </Button>
+                                <Button parentKey="Forward">
+                                    <Size x="17" y="11"/>
+                                    <Anchors>
+                                        <Anchor point="BOTTOM" relativePoint="BOTTOM" x="0" y="0"/>
+                                    </Anchors>
+                                    <NormalTexture parentKey="NormalTexture" atlas="minimal-scrollbar-small-arrow-bottom" useAtlasSize="true"/>
+                                    <HighlightTexture atlas="minimal-scrollbar-small-arrow-bottom" useAtlasSize="true" alphaMode="ADD"/>
+                                </Button>
+                                <Slider parentKey="Slider" orientation="VERTICAL" mixin="MinimalSliderMixin">
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT" relativeKey="$parent.Back" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+                                        <Anchor point="BOTTOMRIGHT" relativeKey="$parent.Forward" relativePoint="TOPRIGHT" x="0" y="0"/>
+                                    </Anchors>
+                                    <KeyValues>
+                                        <KeyValue key="obeyStepOnDrag" value="true" type="boolean"/>
+                                    </KeyValues>
+                                    <Layers>
+                                        <Layer>
+                                            <Texture parentKey="Left" atlas="minimal-scrollbar-small-track-top" useAtlasSize="true">
+                                                <Anchors>
+                                                    <Anchor point="TOP"/>
+                                                </Anchors>
+                                            </Texture>
+                                            <Texture parentKey="Right" atlas="minimal-scrollbar-small-track-bottom" useAtlasSize="true">
+                                                <Anchors>
+                                                    <Anchor point="BOTTOM"/>
+                                                </Anchors>
+                                            </Texture>
+                                            <Texture parentKey="Middle" atlas="!minimal-scrollbar-track-middle" useAtlasSize="true">
+                                                <Anchors>
+                                                    <Anchor point="TOPLEFT" relativeKey="$parent.Left" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+                                                    <Anchor point="BOTTOMRIGHT" relativeKey="$parent.Right" relativePoint="TOPRIGHT" x="0" y="0"/>
+                                                </Anchors>
+                                            </Texture>
+                                        </Layer>
+                                    </Layers>
+                                    <ThumbTexture parentKey="Thumb" atlas="Minimal_SliderBar_Button" useAtlasSize="false">
+                                        <Size x="18" y="17"/>
+                                    </ThumbTexture>
+                                    <Scripts>
+                                        <OnLoad method="OnLoad"/>
+                                    </Scripts>
+                                </Slider>
+                            </Frames>
+                            <Scripts>
+                                <OnLoad method="OnLoad"/>
+                            </Scripts>
+                        </Frame>
+                </Frames>
+            </ScrollingMessageFrame>
+        </Frames>
+    </Frame>
 </Ui>

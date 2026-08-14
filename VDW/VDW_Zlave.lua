@@ -40,21 +40,20 @@ function VDW.Tooltip_Show(owner, titleText, bodyText, color, position)
 	local ScreenWidth, ScreenHeight = GetPhysicalScreenSize()
 	local WidthHalf = ScreenWidth / 2
 	local HeightHalf = ScreenHeight / 2
-	local OwnerLeft = Round(owner:GetLeft())
-	local OwnerBottom = Round(owner:GetBottom())
+	local left, bottom, width, height = owner:GetScaledRect()
 	tt:SetOwner(owner, "ANCHOR_NONE")
 	tt:ClearAllPoints()
 	if position == "Left" then
-		if OwnerLeft >= WidthHalf then
-			tt:SetPoint("TOPRIGHT", owner, "TOPLEFT", 0, 0)
-		elseif OwnerLeft < WidthHalf then
-			tt:SetPoint("TOPLEFT", owner, "TOPRIGHT", 0, 0)
+		if left >= WidthHalf then
+			tt:SetPoint("TOPRIGHT", owner, "CENTER", -width/2, height/2)
+		elseif left < WidthHalf then
+			tt:SetPoint("TOPLEFT", owner, "CENTER", width/2, height/2)
 		end
 	else
-		if OwnerBottom >= HeightHalf then
-			tt:SetPoint("TOPLEFT", owner, "BOTTOMLEFT", 0, 0)
-		elseif OwnerBottom < HeightHalf then
-			tt:SetPoint("BOTTOMLEFT", owner, "TOPLEFT", 0, 0)
+		if bottom >= HeightHalf then
+			tt:SetPoint("TOPLEFT", owner, "CENTER", -width/2, -height/2)
+		elseif bottom < HeightHalf then
+			tt:SetPoint("BOTTOMLEFT", owner, "CENTER", -width/2, height/2)
 		end
 	end
 	GameTooltip_SetTitle(tt, titleText, color, true)
@@ -251,6 +250,7 @@ function VDW.CreateOptionsPopOut(panel, box, popout, color1, color2)
 end
 -- create pop out button
 function VDW.CreateOptionsPopOutButtons(panel, box, popout, choice, name, color1)
+	VDW.counterChoice = VDW.counterChoice + 1
 	panel["Box"..box]["PopOut"..popout]["Choice"..choice] = CreateFrame("Button", nil, nil, "vdwPopOutButton")
     panel["Box"..box]["PopOut"..popout]["Choice"..choice]:ClearAllPoints()
 	panel["Box"..box]["PopOut"..popout]["Choice"..choice].Text:SetTextColor(color1:GetRGB())
@@ -260,17 +260,35 @@ function VDW.CreateOptionsPopOutButtons(panel, box, popout, choice, name, color1
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:SetPoint("TOP", panel["Box"..box]["PopOut"..popout], "BOTTOM", 0, 4)
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:SetScript("OnShow", function(self)
             self:GetParent():SetNormalAtlas("charactercreate-customize-dropdownbox-hover")
-            PlaySound(855, "Master")
+            PlaySound(SOUNDKIT.IG_MINIMAP_OPEN, "Master")
         end)
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:SetScript("OnHide", function(self)
             self:GetParent():SetNormalAtlas("charactercreate-customize-dropdownbox-open")
-            PlaySound(855, "Master")
+            PlaySound(SOUNDKIT.IG_MINIMAP_CLOSE, "Master")
         end)
     else
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:SetParent(panel["Box"..box]["PopOut"..popout].Choice1)
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:SetPoint("TOP", panel["Box"..box]["PopOut"..popout]["Choice"..choice-1], "BOTTOM", 0, 0)
         panel["Box"..box]["PopOut"..popout]["Choice"..choice]:Show()
 	end
+	local w = panel["Box"..box]["PopOut"..popout]["Choice"..choice].Text:GetStringWidth()
+	if w > VDW.maxWidthChoice then VDW.maxWidthChoice = w end
+	panel["Box"..box]["PopOut"..popout]["Choice"..choice]:HookScript("OnClick", function(self, button, down)
+		if button == "LeftButton" and down == false then
+			panel["Box"..box]["PopOut"..popout].Text:SetText(self.Text:GetText())
+			panel["Box"..box]["PopOut"..popout].Choice1:Hide()
+		end
+	end)
+end
+-- choice width
+function VDW.ChoiceWidth(panel, box, popout)
+	VDW.finalWidthChoice = math.ceil(VDW.maxWidthChoice + 8)
+	for c = 1, VDW.counterChoice, 1 do
+		panel["Box"..box]["PopOut"..popout]["Choice"..c]:SetWidth(VDW.finalWidthChoice)
+	end
+	VDW.counterChoice = 0
+	VDW.maxWidthChoice = 160
+	VDW.finalWidthChoice = 0
 end
 -- create checkButton
 function VDW.CreateCheckButton(panel, box, checkbutton)
@@ -281,12 +299,12 @@ end
 function VDW.CheckButtonTick(self, color1)
 	self.Text:SetTextColor(color1:GetRGB())
 	self.Text:SetAlpha(1)
-	PlaySound(858, "Master")
+	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON, "Master")
 end
 -- checkButton UnTick
 function VDW.CheckButtonUnTick(self)
 	self.Text:SetTextColor(0.35, 0.35, 0.35, 0.8)
-	PlaySound(858, "Master")
+	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF, "Master")
 end
 -- checkButton Check
 function VDW.CheckButtonCheck(panel, box, checkbutton, color1)
@@ -336,6 +354,43 @@ function VDW.CreateEditBox(panel, box, editBox, color1)
 	-- leave
 	panel["Box"..box]["EditBox"..editBox].WritingLine:HookScript("OnLeave", function(self) VDW.Tooltip_Hide() end)
 end
+-- create colorbutton
+function VDW.CreateColorButton(panel, box, colorbutton, color1)
+	panel["Box"..box]["ColorButton"..colorbutton].Text:SetTextColor(color1:GetRGB())
+	panel["Box"..box]["ColorButton"..colorbutton]:SetScript("OnEnter", function(self)
+		local word = self.Text:GetText()
+		VDW.Tooltip_Show(self, prefixTip, string.format(VDWtranslate.Global.COLOR_TIP, word), color1, "Left")
+	end)
+	panel["Box"..box]["ColorButton"..colorbutton]:SetScript("OnLeave", function(self) VDW.Tooltip_Hide() end)
+end
+-- create color picker
+function VDW.CreateColorPicker(colorTable, buttonTexture, colorFunction)
+	local function ColorPickerChanged()
+		colorTable.R, colorTable.G, colorTable.B = ColorPickerFrame:GetColorRGB()
+		colorTable.A = ColorPickerFrame:GetColorAlpha()
+		buttonTexture:SetColorTexture(colorTable.R, colorTable.G, colorTable.B, colorTable.A)
+		colorFunction()
+	end
+	local function ColorPickerCanceled(previousValues)
+		local restore = previousValues
+		colorTable.R = restore.r
+		colorTable.G = restore.g
+		colorTable.B = restore.b
+		colorTable.A = restore.a
+		buttonTexture:SetColorTexture(colorTable.R, colorTable.G, colorTable.B, colorTable.A)
+	end
+	local info = {
+		swatchFunc = ColorPickerChanged,
+		opacityFunc = ColorPickerChanged,
+		cancelFunc = ColorPickerCanceled,
+		hasOpacity = true,
+		r = colorTable.R,
+		g = colorTable.G,
+		b = colorTable.B,
+		opacity = colorTable.A,
+	}
+	ColorPickerFrame:SetupColorPickerAndShow(info)
+end
 -- create important notes
 function VDW.CreateImportantNotes(panel, box, color1)
 	panel["Box"..box].Notes:SetTextColor(color1:GetRGB())
@@ -364,6 +419,15 @@ function VDW.MoveTheFrame(option, clickMouse)
 	option:RegisterForDrag(clickMouse)
 	option:SetScript("OnDragStart", option.StartMoving)
 	option:SetScript("OnDragStop", option.StopMovingOrSizing)
+end
+-- add message to scrolling message frame
+function VDW.AddingMessage(self, messageText)
+    self:AddMessage(messageText)
+    if self:GetNumMessages() >= 2 then
+		self.ScrollBar.Slider:SetMinMaxValues(1, self:GetNumMessages())
+		self.ScrollBar.Slider:SetValue(self:GetNumMessages())
+		tempValue = self.ScrollBar.Slider:GetValue()
+	end
 end
 -- Mouse Wheel on Sliders
 function VDW.MouseWheelSlider(self, delta)

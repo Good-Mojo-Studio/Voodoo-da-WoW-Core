@@ -118,10 +118,10 @@ VDW.Background.VDWS = "Forge-Background"
 -- cache player globals
 local function CachePlayerInfo()
 	-- class id
-	local _, _, classID = C_PlayerInfo.GetClass(PlayerLocation:CreateFromUnit("player"))
+	local _, class, classID = C_PlayerInfo.GetClass(PlayerLocation:CreateFromUnit("player"))
 	VDW.PlayerClassID = classID
 	-- class color
-	VDW.PlayerClassColor = C_ClassColor.GetClassColor(select(2, C_PlayerInfo.GetClass(PlayerLocation:CreateFromUnit("player"))))
+	VDW.PlayerClassColor = C_ClassColor.GetClassColor(class)
 	-- faction info
 	local raceID = C_PlayerInfo.GetRace(PlayerLocation:CreateFromUnit("player"))
 	VDW.PlayerFactionInfo = C_CreatureInfo.GetFactionInfo(raceID)
